@@ -32,6 +32,12 @@
       <version>0.1</version>
     </dependency>
     <dependency>
+        <groupId>org.eigenbase</groupId>
+        <artifactId>farrago</artifactId>
+        <version>0.9.3</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.apache.drill.exec</groupId>
       <artifactId>ref</artifactId>
       <version>1.0-SNAPSHOT</version>
@@ -40,7 +46,7 @@
       <groupId>org.apache.drill.exec</groupId>
       <artifactId>ref</artifactId>
       <version>1.0-SNAPSHOT</version>
-      <classifier>test</classifier>
+      <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>    
     

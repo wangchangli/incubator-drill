@@ -35,7 +35,7 @@ public abstract class SingleInputROPBase<T extends SingleInputOperator> extends 
 
   @Override
   protected void setupIterators(IteratorRegistry registry) {
-    List<RecordIterator> iters = registry.getOperator(config.getInput());
+    List<RecordIterator> iters = registry.getOperator(config.getInput()); //why get a list?
     if(iters.size() != 1) throw new IllegalArgumentException(String.format("Expected one input iterator for class %s.  Received %d", this.getClass().getCanonicalName(), iters.size()));
     RecordIterator i = iters.get(0);
     this.record = i.getRecordPointer();

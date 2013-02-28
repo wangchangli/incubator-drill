@@ -51,6 +51,7 @@ public class ReferenceInterpreter {
   /** Generate Reference equivalents to each operation and then collect and store all the sinks. 
    * @throws IOException **/
   public void setup() throws IOException{
+    List<LogicalOperator> plans = plan.getSortedOperators();
     for(LogicalOperator op : plan.getSortedOperators()){
       converter.convert(op);
     }
@@ -74,7 +75,8 @@ public class ReferenceInterpreter {
   
   public static void main(String[] args) throws Exception{
     DrillConfig config = DrillConfig.create();
-    final String jsonFile = args[0];
+    //final String jsonFile = args[0];
+    final String jsonFile = "/home/hadoop/IdeaProjects/incubator-drill/sandbox/prototype/exec/ref/src/test/resources/simple_plan.json";
     LogicalPlan plan = LogicalPlan.parse(config, Files.toString(new File(jsonFile), Charsets.UTF_8));
     IteratorRegistry ir = new IteratorRegistry();
     ReferenceInterpreter i = new ReferenceInterpreter(plan, ir, new BasicEvaluatorFactory(ir), new RSERegistry(config));

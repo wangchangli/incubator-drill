@@ -61,7 +61,7 @@
       },
       {
          input: 3,
-         op: "write",
+         op: "store",
          memo: "output sink",
          storageengine: "console",
          target: {pipe: "STD_OUT"}
