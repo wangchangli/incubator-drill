@@ -32,7 +32,7 @@
 	      ref: "donuts",
 	      storageengine: "cp",
 	      selection: {
-	        path: "/donuts.json",
+	        path: "/home/hadoop/IdeaProjects/incubator-drill/sandbox/prototype/exec/ref/src/test/donuts.json",
 	        type: "JSON"
 	      }
 	    },

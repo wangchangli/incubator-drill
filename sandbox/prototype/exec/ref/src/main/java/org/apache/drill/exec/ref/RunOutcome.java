@@ -17,6 +17,9 @@
  ******************************************************************************/
 package org.apache.drill.exec.ref;
 
+/**
+ * describe a sinkROP run result: success? result size? records number? exception?
+ */
 public class RunOutcome {
   static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(RunOutcome.class);
   

@@ -55,10 +55,105 @@ public class RunSimplePlan{
   }
 
     @Test
+    public void parseSimpleScan() throws Exception{
+
+        DrillConfig config = DrillConfig.create();
+        LogicalPlan plan = LogicalPlan.parse(config, Files.toString(FileUtils.getResourceAsFile("/simple_scan.json"), Charsets.UTF_8));
+        logger.error("=============================0");
+        IteratorRegistry ir = new IteratorRegistry();
+        logger.error("=============================1");
+        ReferenceInterpreter i = new ReferenceInterpreter(plan, ir, new BasicEvaluatorFactory(ir), new RSERegistry(config));
+        logger.error("=============================2");
+        i.setup();
+        logger.error("=============================3");
+        Collection<RunOutcome> outcomes = i.run();
+        logger.error("=============================4");
+        //assertEquals(outcomes.size(), 1);
+        //assertEquals(outcomes.iterator().next().records, 2);
+
+    }
+
+    @Test
+    public void parseSimpleFilter() throws Exception{
+
+        DrillConfig config = DrillConfig.create();
+        LogicalPlan plan = LogicalPlan.parse(config, Files.toString(FileUtils.getResourceAsFile("/simple_filter.json"), Charsets.UTF_8));
+        logger.error("=============================0");
+        IteratorRegistry ir = new IteratorRegistry();
+        logger.error("=============================1");
+        ReferenceInterpreter i = new ReferenceInterpreter(plan, ir, new BasicEvaluatorFactory(ir), new RSERegistry(config));
+        logger.error("=============================2");
+        i.setup();
+        logger.error("=============================3");
+        Collection<RunOutcome> outcomes = i.run();
+        logger.error("=============================4");
+        //assertEquals(outcomes.size(), 1);
+        //assertEquals(outcomes.iterator().next().records, 2);
+
+    }
+
+    @Test
+    public void parseSimpleAggregate() throws Exception{
+
+        DrillConfig config = DrillConfig.create();
+        LogicalPlan plan = LogicalPlan.parse(config, Files.toString(FileUtils.getResourceAsFile("/simple_collapsingaggregate.json"), Charsets.UTF_8));
+        logger.error("=============================0");
+        IteratorRegistry ir = new IteratorRegistry();
+        logger.error("=============================1");
+        ReferenceInterpreter i = new ReferenceInterpreter(plan, ir, new BasicEvaluatorFactory(ir), new RSERegistry(config));
+        logger.error("=============================2");
+        i.setup();
+        logger.error("=============================3");
+        Collection<RunOutcome> outcomes = i.run();
+        logger.error("=============================4");
+        //assertEquals(outcomes.size(), 1);
+        //assertEquals(outcomes.iterator().next().records, 2);
+
+    }
+
+    @Test
+    public void parseSimpleProject() throws Exception{
+
+        DrillConfig config = DrillConfig.create();
+        LogicalPlan plan = LogicalPlan.parse(config, Files.toString(FileUtils.getResourceAsFile("/simple_project.json"), Charsets.UTF_8));
+        logger.error("=============================0");
+        IteratorRegistry ir = new IteratorRegistry();
+        logger.error("=============================1");
+        ReferenceInterpreter i = new ReferenceInterpreter(plan, ir, new BasicEvaluatorFactory(ir), new RSERegistry(config));
+        logger.error("=============================2");
+        i.setup();
+        logger.error("=============================3");
+        Collection<RunOutcome> outcomes = i.run();
+        logger.error("=============================4");
+        //assertEquals(outcomes.size(), 1);
+        //assertEquals(outcomes.iterator().next().records, 2);
+
+    }
+
+    @Test
     public void parseSimpleJoinPlan() throws Exception{
 
         DrillConfig config = DrillConfig.create();
         LogicalPlan plan = LogicalPlan.parse(config, Files.toString(FileUtils.getResourceAsFile("/simple_join.json"), Charsets.UTF_8));
+        logger.error("=============================0");
+        IteratorRegistry ir = new IteratorRegistry();
+        logger.error("=============================1");
+        ReferenceInterpreter i = new ReferenceInterpreter(plan, ir, new BasicEvaluatorFactory(ir), new RSERegistry(config));
+        logger.error("=============================2");
+        i.setup();
+        logger.error("=============================3");
+        Collection<RunOutcome> outcomes = i.run();
+        logger.error("=============================4");
+        //assertEquals(outcomes.size(), 1);
+        //assertEquals(outcomes.iterator().next().records, 2);
+
+    }
+
+    @Test
+    public void parseSimpleSelectPlan() throws Exception{
+
+        DrillConfig config = DrillConfig.create();
+        LogicalPlan plan = LogicalPlan.parse(config, Files.toString(FileUtils.getResourceAsFile("/simple_select.json"), Charsets.UTF_8));
         logger.error("=============================0");
         IteratorRegistry ir = new IteratorRegistry();
         logger.error("=============================1");

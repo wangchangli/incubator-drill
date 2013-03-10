@@ -59,11 +59,11 @@ public class OutputStreamWriter implements RecordRecorder{
     return posStream.getPos();
   }
 
-  @Override
-  public long recordRecord(RecordPointer pointer) throws IOException {
-    pointer.write(writer);
-    return getPos();
-  }
+      @Override
+      public long recordRecord(RecordPointer pointer) throws IOException {
+        pointer.write(writer);
+        return getPos();
+      }
 
   @Override
   public void finish(OutcomeType outcome) throws IOException {

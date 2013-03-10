@@ -30,6 +30,7 @@ import org.apache.drill.common.exceptions.LogicalPlanParsingException;
 import org.apache.drill.common.logical.OperatorGraph.OpNode;
 import org.apache.drill.common.logical.data.LogicalOperator;
 import org.apache.drill.common.logical.graph.GraphAlgos;
+import org.apache.drill.common.util.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -126,7 +127,7 @@ public class LogicalPlan {
 
   public static void main(String[] args) throws Exception {
     DrillConfig config = DrillConfig.create();
-    String externalPlan = Files.toString(new File("src/test/resources/simple_plan.json"), Charsets.UTF_8);
+    String externalPlan = Files.toString(FileUtils.getResourceAsFile("/simple_join.json"), Charsets.UTF_8);
     LogicalPlan plan = parse(config, externalPlan);
   }
 

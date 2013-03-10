@@ -45,28 +45,18 @@
 	    {
 	      op: "filter",
 	      expr: "donuts.ppu < 1.00"
-	    }, 
+	    },
 	    {
 	      op: "segment",
 	      ref: "ppusegment",
 	      exprs: ["donuts.ppu"]
 	    },
 	    {
-	      op: "collapsingaggregate",
-	      within: "ppusegment",
-	      carryovers: ["donuts.ppu"], 
-	      aggregations: [
-	        { ref: "donuts.typeCount",  expr: "count(1)" },
-	        { ref: "donuts.quantity",  expr: "sum(quantity)" },
-	        { ref: "donuts.sales",  expr: "sum(donuts.ppu * quantity)" }
-	      ]
-	    },
-	    {
 	      op: "order",
 	      orderings: [
 	        {order: "desc", expr: "donuts.ppu" }
 	      ]
-	    }, 
+	    },
 	    {
 	      op: "project",
 	      projections: [
@@ -77,7 +67,7 @@
           op: "limit",
           first: 0,
           last: 100
-        }, 
+        },
 	    {
 	      op: "store",
 	      memo: "output sink",

@@ -26,8 +26,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 @JsonTypeName("join")
 public class Join extends LogicalOperatorBase {
-  private final LogicalOperator left;
-  private final LogicalOperator right;
+  //private final LogicalOperator left;
+  //private final LogicalOperator right;
+    private  LogicalOperator left;
+    private  LogicalOperator right;
   private final JoinType type;
   private final JoinCondition[] conditions;
 
@@ -62,6 +64,14 @@ public class Join extends LogicalOperatorBase {
     return right;
   }
 
+
+  public void setLeft(LogicalOperator left){
+      this.left = left;
+  }
+
+  public void setRight(LogicalOperator right){
+      this.right = right;
+  }
   public JoinCondition[] getConditions() {
     return conditions;
   }

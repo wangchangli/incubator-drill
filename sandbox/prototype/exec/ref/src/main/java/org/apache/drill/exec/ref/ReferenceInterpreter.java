@@ -51,7 +51,7 @@ public class ReferenceInterpreter {
   /** Generate Reference equivalents to each operation and then collect and store all the sinks. 
    * @throws IOException **/
   public void setup() throws IOException{
-    List<LogicalOperator> plans = plan.getSortedOperators();
+    //List<LogicalOperator> plans = plan.getSortedOperators();
     for(LogicalOperator op : plan.getSortedOperators()){
       converter.convert(op);
     }

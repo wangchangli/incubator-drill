@@ -1,0 +1,38 @@
+{
+  "head" : {
+    "type" : "apache_drill_logical_plan",
+    "version" : 1,
+    "generator" : {
+      "type" : "manual",
+      "info" : "na"
+    }
+  },
+  "storage" : [ {
+    "type" : "classpath",
+    "name" : "cp"
+  },{
+    "type":"console",
+    "name":"console"
+  }, {
+    "type" : "queue",
+    "name" : "queue"
+  } ],
+  "query" : [ {
+    "op" : "scan",
+    "@id" : 1,
+    "memo" : "initial_scan",
+    "storageengine" : "cp",
+    "selection" : {
+      "path" : "/employees.json",
+      "type" : "JSON"
+    },
+    "ref" : "employees"
+  }, {
+    "op" : "store",
+    "@id" : 2,
+    "memo" : "output sink",
+    "input" : 1,
+    "target":{"pipe":"STD_OUT"},
+    "storageEngine" : "console"
+  } ]
+}

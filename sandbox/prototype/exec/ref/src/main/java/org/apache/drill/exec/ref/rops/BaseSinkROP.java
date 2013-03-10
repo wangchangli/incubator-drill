@@ -75,7 +75,9 @@ public abstract class BaseSinkROP<T extends SinkOperator> extends SingleInputROP
           more = false;
           break;
         }else{
+          System.out.print("he he");
           pos = sinkRecord(record);
+          System.out.print("ha ha");
         }
       }
       handle.progress(pos, recordCount);

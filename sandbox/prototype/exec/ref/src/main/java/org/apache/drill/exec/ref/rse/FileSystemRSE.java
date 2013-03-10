@@ -97,6 +97,24 @@ public class FileSystemRSE extends RSEBase {
         
   }
 
+    public static class HBaseEntry implements ReadEntry{
+        String startKey;
+        String endKey;
+        public HBaseEntry(String startKey, String endKey){
+            this.startKey = startKey;
+            this.endKey = endKey;
+        }
+    }
+
+    public static class MySqlEntry implements ReadEntry{
+        String startKey;
+        String endKey;
+        public MySqlEntry(String startKey, String endKey){
+            this.startKey = startKey;
+            this.endKey = endKey;
+        }
+    }
+
   public class FileSystemOutputConfig {
     public String file;
     public ConverterType type;

@@ -306,4 +306,12 @@ public class JoinROP extends ROPBase<Join> {
             return NextOutcome.NONE_LEFT;
         }
     }
+
+//    public static void main(String[] args) throws Exception{
+//        OuterIterator outerIterator = new OuterIterator();
+//        outerIterator.setupBuffer();
+//        outerIterator.setupBufferForIterator();
+//        outerIterator.next();
+//        outerIterator.getNext();
+//    }
 }
